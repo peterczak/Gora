@@ -16,8 +16,14 @@ def bisection(a, b, epsilon):
         # Ktora obszar ma teraz wybrac [a,c] czy [b,c]
         elif (mat_funkcja(c) * mat_funkcja(a) < 0): # sprawdzanie tego samego zalozenia co w 6 linii
             b = c
+            x = range(int(a),int(c))
+            plt.plot(x, mat_funkcja2(x))
+            plt.show()
         else:
             a = c
+            x = range(int(c),int(b))
+            plt.plot(x, mat_funkcja2(x))
+            plt.show()
 
     print("Wartość pierwiastka wynosi : ", "%.5f" % c)
 bisection(0, pow(10,6), 0.01)
