@@ -1,6 +1,9 @@
 import math
+import matplotlib.pyplot as plt
 def mat_funkcja(x):
     return pow(x, 3) - 1500000 * pow(x, 2) + 750000000002 * x - 125000000000999990
+def mat_funkcja2(i):
+    return [pow(x, 3) - 1500000 * pow(x, 2) + 750000000002 * x - 125000000000999990 for x in i]
 
 def bisection(a, b, epsilon):
     if (mat_funkcja(a) * mat_funkcja(b) >= 0):
@@ -18,3 +21,6 @@ def bisection(a, b, epsilon):
 
     print("Wartość pierwiastka wynosi : ", "%.5f" % c)
 bisection(0, pow(10,6), 0.01)
+x = range(0, pow(10,6))
+plt.plot(x, mat_funkcja2(x))
+plt.show()
